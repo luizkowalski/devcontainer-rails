@@ -2,7 +2,7 @@
 
 ## Why?
 
-I've been trying to get some Ruby on Rails projects I have set up on Codespaces. After many tries, I've finally got it working (at least the way I wanted it to) so now I'm creating this repository to keep these changes and copy them to other projects whenever I need
+I've been trying to get some Ruby on Rails projects I have set up on Codespaces. After a lot of tries, I've finally got it working (at least the way I wanted it to) so now I'm creating this repository to keep these changes and copy them to other projects whenever I need
 
 I mostly copied what was done [here](https://github.com/microsoft/vscode-dev-containers/tree/main/containers/ruby-rails-postgres) and fixed a couple of things that were not working for me or I didn't need.
 
