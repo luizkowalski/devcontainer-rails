@@ -3,7 +3,7 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-	"features": {
+	"features": { // Check available features at https://containers.dev/features
 		// "ghcr.io/dhoeric/features/flyctl:1": {}
 	},
 
