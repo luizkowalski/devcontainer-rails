@@ -4,7 +4,7 @@
 	"service": "app",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"features": {
-		"ghcr.io/dhoeric/features/flyctl:1": {}
+		// "ghcr.io/dhoeric/features/flyctl:1": {}
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
