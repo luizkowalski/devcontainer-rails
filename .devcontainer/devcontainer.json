@@ -3,16 +3,39 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-	"features": { // Check available features at https://containers.dev/features
-		// "ghcr.io/dhoeric/features/flyctl:1": {}
+	"features": {
+		"ghcr.io/dhoeric/features/flyctl:1": {},
+		"ghcr.io/devcontainers/features/sshd:1": {},
+		"ghcr.io/devcontainers/features/git:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/ruby:1": {
+			"version": "3.1.3"
+		},
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": 19
+		},
+		"ghcr.io/devcontainers/features/common-utils:1": {
+			"username": "vscode",
+			"uid": 1000,
+			"gid": 1000,
+			"installZsh": true,
+			"installOhMyZsh": true,
+			"configureZshAsDefaultShell": true,
+			"upgradePackages": true
+		}
 	},
+
+	"extensions": [
+		"rebornix.Ruby"
+	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// This can be used to network with other containers or the host.
-	// "forwardPorts": [3000, 5432],
+	"forwardPorts": [2222],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "bundle install; yarn install"
+	"postCreateCommand": ".devcontainer/boot.sh"
 
 	// Configure tool-specific properties.
 	// "customizations": {},

@@ -18,6 +18,7 @@ I mostly copied what was done [here](https://github.com/microsoft/vscode-dev-con
 - Ruby 3.1
 - PostgreSQL 15
 - Redis 7
+- Node 19
 
 ## Customizations
 
@@ -25,7 +26,7 @@ There are a couple of things you _can_ customize and a couple of things you _sho
 
 ### Could
 
-You can choose different Ruby and Node versions by updating the `docker-compose.yml` file. Currently, it will install Ruby 3.1.3 and Node 19.2.0. You can also change the PostgreSQL username and password, although I don't think it matters too much. Worth noting that if you don't need Node installed, you can skip it by changing the `NODE_VERSION` to `none` in `docker-compose.yml`.
+You can choose different Ruby and Node versions by updating the `devcontainer.json` file. Currently, it will install Ruby 3.1.3 and Node 19.2.0. You can also change the PostgreSQL username and password, although I don't think it matters too much.
 
 You can also change the name of the project under `devcontainer.json` and `docker-compose.yml` if you want to. I've left it as `Your Project Name` for now.
 
