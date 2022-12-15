@@ -19,6 +19,7 @@ I mostly copied what was done [here](https://github.com/microsoft/vscode-dev-con
 - PostgreSQL 15
 - Redis 7
 - Node 19
+- SSH server
 
 ## Customizations
 
@@ -59,3 +60,11 @@ production:
 ```
 
 Notice the `host: postgres`? That's the name of the container in the `docker-compose.yml` file. If you change it to, say, `db`, you'll have to update it here as well.
+
+## How to ssh into the devcontainer?
+
+```bash
+ssh -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o GlobalKnownHostsFile=/dev/null vscode@localhost
+```
+
+The password is `vscode`, configured under `boot.sh`
