@@ -5,6 +5,9 @@
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"features": {
 		"ghcr.io/devcontainers/features/sshd:1": {},
+		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+			"packages": "libpq-dev" // For pg gem
+		},
 		"ghcr.io/devcontainers/features/git:1": {
 			"version": "latest"
 		},
