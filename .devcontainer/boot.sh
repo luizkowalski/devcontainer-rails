@@ -1,7 +1,6 @@
 #!/bin/bash
 
 echo "Setting SSH password for vscode user..."
-# Set up vscode user for SSH
 sudo usermod --password $(echo vscode | openssl passwd -1 -stdin) vscode
 
 echo "Updating RubyGems..."
