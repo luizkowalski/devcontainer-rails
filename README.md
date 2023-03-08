@@ -15,7 +15,7 @@ I mostly copied what was done [here](https://github.com/microsoft/vscode-dev-con
 
 ## What's in the box?
 
-- Ruby 3.2
+- Ruby 3.2.x
 - PostgreSQL 15
 - Redis 7
 - Node 19
