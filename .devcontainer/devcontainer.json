@@ -6,7 +6,7 @@
 	"features": {
 		"ghcr.io/devcontainers/features/sshd:1": {},
 		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-			"packages": "libpq-dev, libvips"
+			"packages": "libpq-dev, libvips, postgresql-client"
 		},
 		"ghcr.io/devcontainers/features/git:1": {
 			"version": "latest"
