@@ -16,7 +16,7 @@ I mostly copied what was done [here](https://github.com/microsoft/vscode-dev-con
 ## What's in the box?
 
 - Ruby 3.2.x
-- PostgreSQL 15
+- PostgreSQL 15 (exposed locally on port 5433)
 - Redis 7
 - Node 19
 - SSH server
