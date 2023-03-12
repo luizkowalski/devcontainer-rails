@@ -33,6 +33,8 @@ You can also change the name of the project under `devcontainer.json` and `docke
 
 If you decided to change the `service` name (defaults to `app` right now) remember to also update the `app` section in `docker-compose.yml`. They have to match.
 
+If you're using vscode as a web app, you can preview the app after adding the following to config/environments/development.rb: `config.hosts <<  ".preview.app.github.dev"`
+
 ### Should
 
 You should, however, update your `database.yml` file if you use one. Here is what mine looks like:
