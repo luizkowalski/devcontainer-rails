@@ -63,6 +63,14 @@ production:
 
 Notice the `host: postgres`? That's the name of the container in the `docker-compose.yml` file. If you change it to, say, `db`, you'll have to update it here as well.
 
+You should update your `config/environments/development.rb` to readily use the redis container as the cache store:
+
+```
+    config.cache_store = :redis_cache_store, { url: "redis://redis:6379/0" }
+```
+
+Notice the `redis` host that is the name of the container in the `docker-compose.yml`. Also, keep in mind to enable caching in development, you need to enable it with `bin/rails dev:cache`.
+
 ## How to ssh into the devcontainer?
 
 ```bash
