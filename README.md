@@ -20,6 +20,7 @@ I mostly copied what was done [here](https://github.com/microsoft/vscode-dev-con
 - Redis 7
 - Node 19
 - SSH server
+- ZSH and Oh My Zsh
 
 ## Customizations
 
