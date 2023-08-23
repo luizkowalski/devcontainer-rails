@@ -2,13 +2,13 @@
 
 ## Why?
 
-I've been trying to get some Ruby on Rails projects I have set up on Codespaces. After a lot of tries, I've finally got it working (at least the way I wanted it to) so now I'm creating this repository to keep these changes and copy them to other projects whenever I need
+I've been trying to get some Ruby on Rails projects I have set up on Codespaces. After many tries, I've finally got it working (at least the way I wanted it to), so now I'm creating this repository to keep these changes and copy them to other projects whenever needed.
 
-I mostly copied what was done [here](https://github.com/microsoft/vscode-dev-containers/tree/main/containers/ruby-rails-postgres) and fixed a couple of things that were not working for me or I didn't need.
+I mostly copied what was done [here](https://github.com/microsoft/vscode-dev-containers/tree/main/containers/ruby-rails-postgres) and fixed some things that were not working for me or that I didn't need.
 
 ## How?
 
-1. Copy `.devcontainer` folder to your project
+1. Copy the `.devcontainer` folder to your project
 2. Customize
 3. Open the project in Codespaces
 4. No step 4 :)
@@ -18,7 +18,7 @@ I mostly copied what was done [here](https://github.com/microsoft/vscode-dev-con
 - Ruby 3.2.x
 - PostgreSQL 15 (exposed locally on port 5433)
 - Redis 7
-- Node 19
+- Node 20
 - SSH server
 - ZSH and Oh My Zsh
 
@@ -30,9 +30,9 @@ There are a couple of things you _can_ customize and a couple of things you _sho
 
 You can choose different Ruby and Node versions by updating the `devcontainer.json` file. Currently, it will install Ruby 3.2.x and Node 19.2.0. You can also change the PostgreSQL username and password, although I don't think it matters too much.
 
-You can also change the name of the project under `devcontainer.json` and `docker-compose.yml` if you want to. I've left it as `Your Project Name` for now.
+You can also change the project's name under `devcontainer.json` and `docker-compose.yml` if you want to. I've left it as `Your Project Name` for now.
 
-If you decided to change the `service` name (defaults to `app` right now) remember to also update the `app` section in `docker-compose.yml`. They have to match.
+If you change the `service` name (defaults to `app` right now), remember to update the app section in docker-compose.yml. They have to match.
 
 If you're using vscode as a web app, you can preview the app after adding the following to config/environments/development.rb: `config.hosts <<  ".preview.app.github.dev"`
 
@@ -62,7 +62,7 @@ production:
   url: <%= ENV["DATABASE_URL"] %>
 ```
 
-Notice the `host: postgres`? That's the name of the container in the `docker-compose.yml` file. If you change it to, say, `db`, you'll have to update it here as well.
+Notice the `host: postgres`? That's the name of the container in the `docker-compose.yml` file. If you change it to `db`, you must update the `database.yml` file too.
 
 ## How to ssh into the devcontainer?
 
