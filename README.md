@@ -28,7 +28,7 @@ There are a couple of things you _can_ customize and a couple of things you _sho
 
 ### Could
 
-You can choose different Ruby and Node versions by updating the `devcontainer.json` file. Currently, it will install Ruby 3.2.x and Node 19.2.0. You can also change the PostgreSQL username and password, although I don't think it matters too much.
+You can choose different Ruby and Node versions by updating the `devcontainer.json` file. Currently, it will install Ruby 3.2.x and Node 20.x.x. You can also change the PostgreSQL username and password, although I don't think it matters too much.
 
 You can also change the project's name under `devcontainer.json` and `docker-compose.yml` if you want to. I've left it as `Your Project Name` for now.
 
@@ -44,9 +44,9 @@ You should, however, update your `database.yml` file if you use one. Here is wha
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: postgres
-  username: postgres
-  password: postgres
+  host: postgres # This is the name of the container in the docker-compose.yml file
+  username: postgres # This is the default username for the postgres image
+  password: postgres # This is the default password for the postgres image
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
