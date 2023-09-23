@@ -25,6 +25,10 @@
       "installOhMyZsh": true,
       "configureZshAsDefaultShell": true,
       "upgradePackages": true
+    },
+    "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
+      "username": "vscode",
+      "plugins": "bundler rails ruby yarn"
     }
   },
 
