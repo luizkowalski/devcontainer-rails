@@ -35,7 +35,7 @@
   // Configure tool-specific properties.
   "customizations": {
     "vscode": {
-      "extensions": ["Shopify.ruby-lsp"]
+      "extensions": ["Shopify.ruby-lsp", "EditorConfig.EditorConfig"]
     }
   },
 
