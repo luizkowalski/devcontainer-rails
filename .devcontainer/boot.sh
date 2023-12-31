@@ -14,6 +14,6 @@ echo "Copying database.yml..."
 cp -n config/database.yml.example config/database.yml
 
 echo "Creating database..."
-bin/rails db:create db:migrate db:seed
+bin/rails db:prepare 
 
 echo "Done!"

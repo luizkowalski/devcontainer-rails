@@ -1,5 +1,7 @@
 FROM mcr.microsoft.com/vscode/devcontainers/base:ubuntu-22.04
 
+ENV RAILS_DEVELOPMENT_HOSTS=".githubpreview.dev,.app.github.dev"
+
 # Adding the PostgreSQL repository so we can install postgresql-client v15
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmor | tee /etc/apt/trusted.gpg.d/apt.postgresql.org.gpg >/dev/null

@@ -15,7 +15,7 @@ I mostly copied what was done [here](https://github.com/microsoft/vscode-dev-con
 
 ## What's in the box?
 
-- Ruby 3.2.x
+- Ruby 3.3
 - PostgreSQL 15 (exposed locally on port 5433)
 - Redis 7
 - Node 20
@@ -33,8 +33,6 @@ You can choose different Ruby and Node versions by updating the `devcontainer.js
 You can also change the project's name under `devcontainer.json` and `docker-compose.yml` if you want to. I've left it as `Your Project Name` for now.
 
 If you change the `service` name (defaults to `app` right now), remember to update the app section in docker-compose.yml. They have to match.
-
-If you're using vscode as a web app, you can preview the app after adding the following to config/environments/development.rb: `config.hosts <<  ".preview.app.github.dev"`
 
 ### Should
 
