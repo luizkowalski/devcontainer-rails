@@ -19,7 +19,6 @@ I mostly copied what was done [here](https://github.com/microsoft/vscode-dev-con
 - PostgreSQL 15 (exposed locally on port 5433)
 - Redis 7
 - Node 20
-- SSH server
 - ZSH and Oh My Zsh
 
 ## Customizations
@@ -62,10 +61,7 @@ production:
 
 Notice the `host: postgres`? That's the name of the container in the `docker-compose.yml` file. If you change it to `db`, you must update the `database.yml` file too.
 
-## How to ssh into the devcontainer?
+## How to ssh into the codespace instance?
 
-```bash
-ssh -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o GlobalKnownHostsFile=/dev/null vscode@localhost
-```
-
-The password is `vscode`, configured under `boot.sh`
+The SSH feature provided by the container.dev team was deprecated in favor of `gh`'s [official CLI option](https://cli.github.com/manual/gh_codespace_ssh). 
+Now, you should install `gh` CLI and run `gh codespace ssh`. 

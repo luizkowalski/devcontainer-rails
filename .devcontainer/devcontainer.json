@@ -4,7 +4,6 @@
   "service": "app",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "features": {
-    "ghcr.io/devcontainers/features/sshd:1": {},
     "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
       "packages": "libpq-dev, libvips, postgresql-client-15"
     },

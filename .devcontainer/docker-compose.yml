@@ -9,7 +9,7 @@ services:
       - ../..:/workspaces:cached
     command: sleep infinity
   postgres:
-    image: postgres:15-alpine
+    image: postgres:16.1
     restart: unless-stopped
     volumes:
       - postgres-data:/var/lib/postgresql/data
