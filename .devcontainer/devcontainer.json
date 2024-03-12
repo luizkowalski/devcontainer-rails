@@ -28,6 +28,9 @@
     "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
       "username": "vscode",
       "plugins": "bundler rails ruby yarn"
+    },
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
     }
   },
 
