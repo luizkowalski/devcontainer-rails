@@ -9,7 +9,7 @@ services:
       - ../..:/workspaces:cached
     command: sleep infinity
   postgres:
-    image: postgres:16.1
+    image: postgres:16.2-alpine
     restart: unless-stopped
     volumes:
       - postgres-data:/var/lib/postgresql/data
@@ -20,7 +20,7 @@ services:
       POSTGRES_DB: postgres
       POSTGRES_PASSWORD: postgres
   redis:
-    image: redis:7-alpine
+    image: redis:7.2-alpine
     restart: unless-stopped
     volumes:
       - redis-data:/data

@@ -40,7 +40,7 @@
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // This can be used to network with other containers or the host.
-  "forwardPorts": [2222, 5433],
+  "forwardPorts": [5433],
 
   // Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": ".devcontainer/boot.sh"
