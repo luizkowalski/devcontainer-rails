@@ -18,8 +18,8 @@
     },
     "ghcr.io/devcontainers/features/common-utils:2": {
       "username": "vscode",
-      "userUid": 1000,
-      "userGid": 1000,
+      "userUid": 1001,
+      "userGid": 1001,
       "installZsh": true,
       "installOhMyZsh": true,
       "configureZshAsDefaultShell": true,
