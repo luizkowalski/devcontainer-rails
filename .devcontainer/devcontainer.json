@@ -5,13 +5,13 @@
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "features": {
     "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-      "packages": "libpq-dev, libvips, postgresql-client-15"
+      "packages": "libpq-dev, libvips, postgresql-client-16"
     },
     "ghcr.io/devcontainers/features/git:1": {
       "version": "latest"
     },
     "ghcr.io/devcontainers/features/ruby:1": {
-      "version": "3.3.1"
+      "version": "3.3.2"
     },
     "ghcr.io/devcontainers/features/node:1": {
       "version": 20
