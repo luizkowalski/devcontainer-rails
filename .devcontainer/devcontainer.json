@@ -4,18 +4,7 @@
   "service": "app",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "features": {
-    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-      "packages": "libpq-dev, libvips, postgresql-client-16"
-    },
-    "ghcr.io/devcontainers/features/git:1": {
-      "version": "latest"
-    },
-    "ghcr.io/devcontainers/features/ruby:1": {
-      "version": "3.3.2"
-    },
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": 20
-    },
+    "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers/features/common-utils:2": {
       "username": "vscode",
       "userUid": 1001,
@@ -25,9 +14,16 @@
       "configureZshAsDefaultShell": true,
       "upgradePackages": true
     },
+    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+      "packages": "libpq-dev, libvips, postgresql-client-16"
+    },
+    "ghcr.io/devcontainers/features/ruby:1": {
+      "version": "3.3.2"
+    },
+    "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
       "username": "vscode",
-      "plugins": "bundler rails ruby yarn"
+      "plugins": "bundler rails ruby yarn git"
     },
     "ghcr.io/devcontainers/features/sshd:1": {
       "version": "latest"
@@ -45,9 +41,10 @@
   // This can be used to network with other containers or the host.
   "forwardPorts": [5433],
 
-  // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": ".devcontainer/boot.sh"
+  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
 
-  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  // "remoteUser": "root"
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": ".devcontainer/boot.sh",
+
+  "remoteUser": "vscode"
 }
