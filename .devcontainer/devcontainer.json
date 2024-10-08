@@ -18,7 +18,7 @@
       "packages": "libpq-dev, libvips, postgresql-client-16"
     },
     "ghcr.io/devcontainers/features/ruby:1": {
-      "version": "3.3.2"
+      "version": "3.3.5"
     },
     "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
