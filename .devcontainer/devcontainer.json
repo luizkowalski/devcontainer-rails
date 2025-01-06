@@ -15,10 +15,10 @@
       "upgradePackages": true
     },
     "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-      "packages": "libpq-dev, libvips, postgresql-client-16"
+      "packages": "libpq-dev, libvips"
     },
     "ghcr.io/devcontainers/features/ruby:1": {
-      "version": "3.3.5"
+      "version": "3.4.1"
     },
     "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
