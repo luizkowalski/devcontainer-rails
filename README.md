@@ -15,10 +15,10 @@ I mostly copied what was done [here](https://github.com/microsoft/vscode-dev-con
 
 ## What's in the box?
 
-- Ruby 3.3
+- Ruby 3.4.1
 - PostgreSQL 16 (exposed locally on port 5433)
-- Redis 7
-- Node 20
+- Valkey 8
+- Node LTS
 - ZSH and Oh My Zsh
 
 ## Customizations

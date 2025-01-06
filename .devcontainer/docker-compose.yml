@@ -19,12 +19,14 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_DB: postgres
       POSTGRES_PASSWORD: postgres
-  redis:
-    image: redis:7.2-alpine
+  valkey:
+    image: valkey/valkey:8.0.1-alpine
     restart: unless-stopped
+    ports:
+      - 6379:6379
     volumes:
-      - redis-data:/data
+      - valkey-data:/data
 
 volumes:
   postgres-data:
-  redis-data:
+  valkey-data:

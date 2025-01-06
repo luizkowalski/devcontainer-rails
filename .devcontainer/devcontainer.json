@@ -1,5 +1,5 @@
 {
-  "name": "Your Project Name",
+  "name": "Codespace on Rails",
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
