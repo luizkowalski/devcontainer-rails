@@ -21,7 +21,7 @@
       "version": "3.4.1"
     },
     "ghcr.io/devcontainers/features/node:1": {},
-    "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
+    "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
       "username": "vscode",
       "plugins": "bundler rails ruby yarn git"
     },
@@ -44,7 +44,7 @@
   "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": ".devcontainer/boot.sh",
+  "postCreateCommand": ".devcontainer/boot",
 
   "remoteUser": "vscode"
 }

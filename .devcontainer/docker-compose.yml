@@ -9,7 +9,7 @@ services:
       - ../..:/workspaces:cached
     command: sleep infinity
   postgres:
-    image: postgres:16.2-alpine
+    image: postgres:17.2-alpine
     restart: unless-stopped
     volumes:
       - postgres-data:/var/lib/postgresql/data
@@ -20,7 +20,7 @@ services:
       POSTGRES_DB: postgres
       POSTGRES_PASSWORD: postgres
   valkey:
-    image: valkey/valkey:8.0.1-alpine
+    image: valkey/valkey:8.0.2-alpine
     restart: unless-stopped
     ports:
       - 6379:6379

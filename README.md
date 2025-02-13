@@ -9,9 +9,8 @@ I mostly copied what was done [here](https://github.com/microsoft/vscode-dev-con
 ## How?
 
 1. Copy the `.devcontainer` folder to your project
-2. Customize
+2. Customize the files to your needs
 3. Open the project in Codespaces
-4. No step 4 :)
 
 ## What's in the box?
 
@@ -27,7 +26,7 @@ There are a couple of things you _can_ customize and a couple of things you _sho
 
 ### Could
 
-You can choose different Ruby and Node versions by updating the `devcontainer.json` file. Currently, it will install Ruby 3.2.x and Node 20.x.x. You can also change the PostgreSQL username and password, although I don't think it matters too much.
+You can choose different Ruby and Node versions by updating the `devcontainer.json` file. Currently, it will install Ruby 3.4.x and Node LTS You can also change the PostgreSQL username and password, although I don't think it matters too much.
 
 You can also change the project's name under `devcontainer.json` and `docker-compose.yml` if you want to. I've left it as `Your Project Name` for now.
 
@@ -63,4 +62,4 @@ Notice the `host: postgres`? That's the name of the container in the `docker-com
 
 ## How do I SSH into the codespace instance?
 
-This configuration includes an SSH server. To access your codespace instance, you should install the `gh` CLI and run `gh codespace ssh`.
+This configuration includes an SSH server. To access your codespace instance, you should install the `gh` CLI and run `gh codespace ssh` and select your codespace.
