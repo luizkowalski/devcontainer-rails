@@ -1,6 +1,6 @@
 services:
   app:
-    container_name: app # This is the name of the container in the Dockerfile, not the name of the service in the docker-compose.yml file
+    container_name: app # This is the name of the container when you run `docker ps`, not the name of the service in the `devcontainer.json` file
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
