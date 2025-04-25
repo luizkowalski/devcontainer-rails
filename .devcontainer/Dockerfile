@@ -1,15 +1,14 @@
-FROM mcr.microsoft.com/vscode/devcontainers/base:ubuntu-24.04
+FROM mcr.microsoft.com/devcontainers/base:ubuntu-24.04
 
 ENV RAILS_DEVELOPMENT_HOSTS=".githubpreview.dev,.app.github.dev"
 
-RUN apt install curl ca-certificates git
+RUN apt install curl ca-certificates git -y
 
-# Installs postgresql-client-16
-RUN install -d /usr/share/postgresql-common/pgdg
-RUN curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
-RUN sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+# Installs postgresql-client-17
+RUN sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+RUN curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg
 
 RUN apt update \
-  && apt install postgresql-client-16 -y --no-install-recommends \
+  && apt install postgresql-client-17 -y --no-install-recommends \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*

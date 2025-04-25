@@ -14,8 +14,8 @@ I mostly copied what was done [here](https://github.com/microsoft/vscode-dev-con
 
 ## What's in the box?
 
-- Ruby 3.4.1
-- PostgreSQL 16 (exposed locally on port 5433)
+- Ruby 3.4.3
+- PostgreSQL 17 (exposed locally on port 5433)
 - Valkey 8
 - Node LTS
 - ZSH and Oh My Zsh
@@ -60,6 +60,10 @@ production:
 
 Notice the `host: postgres`? That's the name of the container in the `docker-compose.yml` file. If you change it to `db`, you must update the `database.yml` file too.
 
-## How do I SSH into the codespace instance?
+## How do I SSH into the Codespace instance?
 
 This configuration includes an SSH server. To access your codespace instance, you should install the `gh` CLI and run `gh codespace ssh` and select your codespace.
+
+## How do I attach to my container if I'm not using Codespaces?
+
+`docker exec -it --user vscode app /bin/zsh`

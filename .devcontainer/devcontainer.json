@@ -18,7 +18,7 @@
       "packages": "libpq-dev, libvips"
     },
     "ghcr.io/devcontainers/features/ruby:1": {
-      "version": "3.4.1"
+      "version": "3.4.3"
     },
     "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {

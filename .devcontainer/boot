@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Current user: $(whoami)"
+
 echo "Updating RubyGems..."
 gem update --system -N
 
