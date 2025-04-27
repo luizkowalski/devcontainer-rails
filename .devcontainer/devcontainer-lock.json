@@ -1,0 +1,39 @@
+{
+  "features": {
+    "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
+      "version": "0.0.4",
+      "resolved": "ghcr.io/devcontainers-extra/features/zsh-plugins@sha256:c8a1393b968f60d7ecf1199593fd9d88a0e0412229d21069700c4a3f52bd3722",
+      "integrity": "sha256:c8a1393b968f60d7ecf1199593fd9d88a0e0412229d21069700c4a3f52bd3722"
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "version": "2.5.3",
+      "resolved": "ghcr.io/devcontainers/features/common-utils@sha256:3cf7ca93154faf9bdb128f3009cf1d1a91750ec97cc52082cf5d4edef5451f85",
+      "integrity": "sha256:3cf7ca93154faf9bdb128f3009cf1d1a91750ec97cc52082cf5d4edef5451f85"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "1.0.14",
+      "resolved": "ghcr.io/devcontainers/features/github-cli@sha256:ca677566507c4118e4368cd76a4800807e911e5e350cc3525fb67ebc9132dfa1",
+      "integrity": "sha256:ca677566507c4118e4368cd76a4800807e911e5e350cc3525fb67ebc9132dfa1"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "1.6.2",
+      "resolved": "ghcr.io/devcontainers/features/node@sha256:36c03732c3421f11de7a3eefc7e9a7fb3df123cb2e48b115d61fdfe8994911d9",
+      "integrity": "sha256:36c03732c3421f11de7a3eefc7e9a7fb3df123cb2e48b115d61fdfe8994911d9"
+    },
+    "ghcr.io/devcontainers/features/ruby:1": {
+      "version": "1.3.1",
+      "resolved": "ghcr.io/devcontainers/features/ruby@sha256:810d7c68f9393ebe9aaa0ec51ed7172c1ef7e3a73d8bb7c6ebf2b220e183480f",
+      "integrity": "sha256:810d7c68f9393ebe9aaa0ec51ed7172c1ef7e3a73d8bb7c6ebf2b220e183480f"
+    },
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "1.0.10",
+      "resolved": "ghcr.io/devcontainers/features/sshd@sha256:6e98e1977a3629e4372c41691602311b3455b682aa0e5abf29d6c33e1ee2e6e1",
+      "integrity": "sha256:6e98e1977a3629e4372c41691602311b3455b682aa0e5abf29d6c33e1ee2e6e1"
+    },
+    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+      "version": "1.0.2",
+      "resolved": "ghcr.io/rocker-org/devcontainer-features/apt-packages@sha256:87a4d7750a596a5db034ba8508782f31aebdc2ffe955c66aaecb33d9de2ecdae",
+      "integrity": "sha256:87a4d7750a596a5db034ba8508782f31aebdc2ffe955c66aaecb33d9de2ecdae"
+    }
+  }
+}

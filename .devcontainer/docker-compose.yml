@@ -5,7 +5,7 @@ services:
       context: ..
       dockerfile: .devcontainer/Dockerfile
     volumes:
-      - ../..:/workspaces:cached
+      - ../:/workspaces/app:cached
     command: sleep infinity
   postgres:
     image: postgres:17.2-alpine

@@ -1,8 +1,8 @@
 {
   "name": "Codespace on Rails",
   "dockerComposeFile": "docker-compose.yml",
-  "service": "app",
-  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "service": "app", // This is the name of the service in the `docker-compose.yml` file
+  "workspaceFolder": "/workspaces/app",
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers/features/common-utils:2": {
@@ -34,6 +34,9 @@
   "customizations": {
     "vscode": {
       "extensions": ["Shopify.ruby-lsp", "EditorConfig.EditorConfig"]
+    },
+    "settings": {
+      "terminal.integrated.defaultProfile.linux": "zsh"
     }
   },
 
@@ -41,7 +44,7 @@
   // This can be used to network with other containers or the host.
   "forwardPorts": [5433],
 
-  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+  "postStartCommand": "git config --global --add safe.directory /workspaces/app",
 
   // Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": ".devcontainer/boot",

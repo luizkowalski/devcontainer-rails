@@ -19,6 +19,7 @@ I mostly copied what was done [here](https://github.com/microsoft/vscode-dev-con
 - Valkey 8
 - Node LTS
 - ZSH and Oh My Zsh
+- Non root user
 
 ## Customizations
 
@@ -66,4 +67,30 @@ This configuration includes an SSH server. To access your codespace instance, yo
 
 ## How do I attach to my container if I'm not using Codespaces?
 
-`docker exec -it --user vscode app /bin/zsh`
+```bash
+docker exec -it --user vscode app /bin/zsh
+```
+
+(or use DevContainer VSCode extension)
+
+## Using devcontainer CLI
+
+Install with `npm install -g @devcontainers/cli`
+
+### Setting it up
+```bash
+devcontainer up --workspace-folder .
+```
+
+### Checking for outdated dependencies
+
+```bash
+devcontainer --workspace-folder . outdated
+```
+
+### Upgrading your dependencies
+
+```bash
+devcontainer upgrade --workspace-folder .
+```
+
