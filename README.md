@@ -71,6 +71,12 @@ This configuration includes an SSH server. To access your codespace instance, yo
 docker exec -it --user vscode app /bin/zsh
 ```
 
+or
+
+```bash
+devcontainer exec --workspace-folder . zsh
+```
+
 (or use DevContainer VSCode extension)
 
 ## Using devcontainer CLI
@@ -94,3 +100,9 @@ devcontainer --workspace-folder . outdated
 devcontainer upgrade --workspace-folder .
 ```
 
+### Removing everything
+
+```bash
+docker stop $(docker ps -q)
+docker system prune -a --volumes
+```
