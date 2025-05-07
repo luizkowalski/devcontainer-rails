@@ -47,7 +47,7 @@
   "postStartCommand": "git config --global --add safe.directory /workspaces/app",
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": ".devcontainer/boot",
+  "postCreateCommand": ".devcontainer/postCreate",
 
   "remoteUser": "vscode"
 }
