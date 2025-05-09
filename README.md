@@ -104,5 +104,5 @@ devcontainer upgrade --workspace-folder .
 
 ```bash
 docker stop $(docker ps -q)
-docker system prune -a --volumes
+docker system prune -a --volumes --force
 ```

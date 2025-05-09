@@ -5,14 +5,25 @@ echo "Current user: $(whoami)"
 echo "Updating RubyGems..."
 gem update --system -N
 
-echo "Installing dependencies..."
-bundle install
-yarn install
+if [ -f "Gemfile" ]; then
+  bundle install
+else
+  echo "No Gemfile found, skipping dependencies installation."
+fi
+
+if [ -f "package.json" ]; then
+  yarn install
+else
+  echo "No package.json found, skipping JavaScript dependencies installation."
+fi
 
 echo "Copying database.yml..."
 cp -n config/database.yml.example config/database.yml
 
-echo "Preparing the database..."
-bin/rails db:prepare
+if [ -f "bin/rails" ]; then
+  bin/rails db:prepare
+else
+  echo "bin/rails not found, skipping database preparation."
+fi
 
 echo "Done!"
