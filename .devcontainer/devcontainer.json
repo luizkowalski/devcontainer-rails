@@ -1,5 +1,5 @@
 {
-  "name": "Codespace on Rails",
+  "name": "Devcontainer on Rails",
   "dockerComposeFile": "docker-compose.yml",
   "service": "app", // This is the name of the service in the `docker-compose.yml` file
   "workspaceFolder": "/workspaces/app",
