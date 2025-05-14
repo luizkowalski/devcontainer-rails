@@ -2,6 +2,9 @@
 
 echo "Current user: $(whoami)"
 
+echo "Enable idiomatic version file..."
+mise settings add idiomatic_version_file_enable_tools ruby
+
 echo "Updating RubyGems..."
 gem update --system -N
 

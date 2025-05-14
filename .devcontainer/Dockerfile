@@ -11,3 +11,5 @@ RUN apt-get update \
   && apt-get install postgresql-client-17 -y --no-install-recommends \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
+
+USER vscode

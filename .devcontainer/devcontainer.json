@@ -17,13 +17,13 @@
     "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
       "packages": "libpq-dev, libvips"
     },
-    "ghcr.io/devcontainers/features/ruby:1": {
+    "ghcr.io/roul/devcontainer-features/mise-ruby:1": {
       "version": "3.4.3"
     },
     "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
       "username": "vscode",
-      "plugins": "bundler rails ruby yarn git"
+      "plugins": "bundler git mise rails ruby yarn"
     },
     "ghcr.io/devcontainers/features/sshd:1": {
       "version": "latest"

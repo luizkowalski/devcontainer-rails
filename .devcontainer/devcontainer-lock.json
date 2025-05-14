@@ -20,11 +20,6 @@
       "resolved": "ghcr.io/devcontainers/features/node@sha256:36c03732c3421f11de7a3eefc7e9a7fb3df123cb2e48b115d61fdfe8994911d9",
       "integrity": "sha256:36c03732c3421f11de7a3eefc7e9a7fb3df123cb2e48b115d61fdfe8994911d9"
     },
-    "ghcr.io/devcontainers/features/ruby:1": {
-      "version": "1.3.1",
-      "resolved": "ghcr.io/devcontainers/features/ruby@sha256:810d7c68f9393ebe9aaa0ec51ed7172c1ef7e3a73d8bb7c6ebf2b220e183480f",
-      "integrity": "sha256:810d7c68f9393ebe9aaa0ec51ed7172c1ef7e3a73d8bb7c6ebf2b220e183480f"
-    },
     "ghcr.io/devcontainers/features/sshd:1": {
       "version": "1.0.10",
       "resolved": "ghcr.io/devcontainers/features/sshd@sha256:6e98e1977a3629e4372c41691602311b3455b682aa0e5abf29d6c33e1ee2e6e1",
@@ -34,6 +29,19 @@
       "version": "1.0.2",
       "resolved": "ghcr.io/rocker-org/devcontainer-features/apt-packages@sha256:87a4d7750a596a5db034ba8508782f31aebdc2ffe955c66aaecb33d9de2ecdae",
       "integrity": "sha256:87a4d7750a596a5db034ba8508782f31aebdc2ffe955c66aaecb33d9de2ecdae"
+    },
+    "ghcr.io/roul/devcontainer-features/mise-ruby:1": {
+      "version": "1.0.2",
+      "resolved": "ghcr.io/roul/devcontainer-features/mise-ruby@sha256:0bfa744260c880cf2905a30736b6870a6ea54bea300c372095f1d860ed83acf9",
+      "integrity": "sha256:0bfa744260c880cf2905a30736b6870a6ea54bea300c372095f1d860ed83acf9",
+      "dependsOn": [
+        "ghcr.io/roul/devcontainer-features/mise:latest"
+      ]
+    },
+    "ghcr.io/roul/devcontainer-features/mise:latest": {
+      "version": "1.0.3",
+      "resolved": "ghcr.io/roul/devcontainer-features/mise@sha256:5009b3bd1bc0a267ca9733bd88c0453f6c029339f4d87cf52bd61b2f5d67c560",
+      "integrity": "sha256:5009b3bd1bc0a267ca9733bd88c0453f6c029339f4d87cf52bd61b2f5d67c560"
     }
   }
 }

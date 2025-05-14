@@ -19,6 +19,7 @@ I mostly copied what was done [here](https://github.com/microsoft/vscode-dev-con
 - Valkey 8
 - Node LTS
 - ZSH and Oh My Zsh
+- Mise version manager
 - Non root user
 
 ## Customizations
