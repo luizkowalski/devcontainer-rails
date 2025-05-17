@@ -15,11 +15,6 @@
       "resolved": "ghcr.io/devcontainers/features/github-cli@sha256:ca677566507c4118e4368cd76a4800807e911e5e350cc3525fb67ebc9132dfa1",
       "integrity": "sha256:ca677566507c4118e4368cd76a4800807e911e5e350cc3525fb67ebc9132dfa1"
     },
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "1.6.2",
-      "resolved": "ghcr.io/devcontainers/features/node@sha256:36c03732c3421f11de7a3eefc7e9a7fb3df123cb2e48b115d61fdfe8994911d9",
-      "integrity": "sha256:36c03732c3421f11de7a3eefc7e9a7fb3df123cb2e48b115d61fdfe8994911d9"
-    },
     "ghcr.io/devcontainers/features/sshd:1": {
       "version": "1.0.10",
       "resolved": "ghcr.io/devcontainers/features/sshd@sha256:6e98e1977a3629e4372c41691602311b3455b682aa0e5abf29d6c33e1ee2e6e1",
@@ -30,6 +25,14 @@
       "resolved": "ghcr.io/rocker-org/devcontainer-features/apt-packages@sha256:87a4d7750a596a5db034ba8508782f31aebdc2ffe955c66aaecb33d9de2ecdae",
       "integrity": "sha256:87a4d7750a596a5db034ba8508782f31aebdc2ffe955c66aaecb33d9de2ecdae"
     },
+    "ghcr.io/roul/devcontainer-features/mise-node:1": {
+      "version": "1.0.3",
+      "resolved": "ghcr.io/roul/devcontainer-features/mise-node@sha256:60470630f6acd1f775118c9bfe92580b0f289d7b339716421010f825d1e3518b",
+      "integrity": "sha256:60470630f6acd1f775118c9bfe92580b0f289d7b339716421010f825d1e3518b",
+      "dependsOn": [
+        "ghcr.io/roul/devcontainer-features/mise:latest"
+      ]
+    },
     "ghcr.io/roul/devcontainer-features/mise-ruby:1": {
       "version": "1.0.2",
       "resolved": "ghcr.io/roul/devcontainer-features/mise-ruby@sha256:0bfa744260c880cf2905a30736b6870a6ea54bea300c372095f1d860ed83acf9",
@@ -38,10 +41,10 @@
         "ghcr.io/roul/devcontainer-features/mise:latest"
       ]
     },
-    "ghcr.io/roul/devcontainer-features/mise:latest": {
-      "version": "1.0.3",
-      "resolved": "ghcr.io/roul/devcontainer-features/mise@sha256:5009b3bd1bc0a267ca9733bd88c0453f6c029339f4d87cf52bd61b2f5d67c560",
-      "integrity": "sha256:5009b3bd1bc0a267ca9733bd88c0453f6c029339f4d87cf52bd61b2f5d67c560"
+    "ghcr.io/roul/devcontainer-features/mise:1": {
+      "version": "1.0.6",
+      "resolved": "ghcr.io/roul/devcontainer-features/mise@sha256:bcbd34b34176b6255d5aa5b881f1addc99bb3eed6049c841cb201f63fca132e4",
+      "integrity": "sha256:bcbd34b34176b6255d5aa5b881f1addc99bb3eed6049c841cb201f63fca132e4"
     }
   }
 }
