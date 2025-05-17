@@ -24,7 +24,7 @@
     "ghcr.io/roul/devcontainer-features/mise-node:1": {},
     "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
       "username": "vscode",
-      "plugins": "bundler git mise rails ruby yarn"
+      "plugins": "bundler git rails ruby yarn"
     },
     "ghcr.io/devcontainers/features/sshd:1": {
       "version": "latest"
