@@ -30,25 +30,25 @@
       "version": "latest"
     }
   },
-
   // Configure tool-specific properties.
   "customizations": {
     "vscode": {
-      "extensions": ["Shopify.ruby-lsp", "EditorConfig.EditorConfig"]
+      "extensions": [
+        "Shopify.ruby-lsp",
+        "EditorConfig.EditorConfig"
+      ]
     },
     "settings": {
       "terminal.integrated.defaultProfile.linux": "zsh"
     }
   },
-
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // This can be used to network with other containers or the host.
-  "forwardPorts": [5433],
-
+  "forwardPorts": [
+    5433
+  ],
   "postStartCommand": "git config --global --add safe.directory /workspaces/app",
-
   // Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": ".devcontainer/postCreate",
-
   "remoteUser": "vscode"
 }

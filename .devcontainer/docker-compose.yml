@@ -19,7 +19,7 @@ services:
       POSTGRES_DB: postgres
       POSTGRES_PASSWORD: postgres
     healthcheck:
-      test: [ "CMD", "pg_isready", "-U", "postgres", "-d", "postgres" ]
+      test: ["CMD", "pg_isready", "-U", "postgres", "-d", "postgres"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -27,7 +27,7 @@ services:
     image: valkey/valkey:8.1-alpine
     restart: unless-stopped
     healthcheck:
-      test: [ "CMD", "valkey-cli", "ping" ]
+      test: ["CMD", "valkey-cli", "ping"]
       interval: 10s
       timeout: 5s
       retries: 5
