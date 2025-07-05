@@ -7,35 +7,64 @@ services:
     volumes:
       - ../:/workspaces/app:cached
     command: sleep infinity
+    depends_on:
+      postgres:
+        condition: service_healthy
+      valkey:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Database
   postgres:
     image: postgres:17.5-alpine
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
     volumes:
       - postgres-data:/var/lib/postgresql/data
     ports:
       - 5433:5432
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_DB: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", "postgres", "-d", "postgres"]
+      test: ["CMD", "pg_isready", "-U", "${POSTGRES_USER:-postgres}", "-d", "${POSTGRES_DB:-postgres}"]
       interval: 10s
       timeout: 5s
       retries: 5
+      start_period: 30s
+
+  # Cache and Sidekiq
   valkey:
     image: valkey/valkey:8.1-alpine
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+        reservations:
+          memory: 64M
+    environment:
+      VALKEY_PASSWORD: ${VALKEY_PASSWORD:-devpassword}
+    command: ["valkey-server", "--requirepass", "${VALKEY_PASSWORD:-devpassword}"]
     healthcheck:
-      test: ["CMD", "valkey-cli", "ping"]
+      test: ["CMD", "valkey-cli", "-a", "${VALKEY_PASSWORD:-devpassword}", "ping"]
       interval: 10s
       timeout: 5s
       retries: 5
+      start_period: 10s
     ports:
-      - 6379:6379
+      - ${VALKEY_PORT:-6379}:6379
     volumes:
       - valkey-data:/data
 
 volumes:
   postgres-data:
+    driver: local
   valkey-data:
+    driver: local

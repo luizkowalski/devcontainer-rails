@@ -27,7 +27,7 @@
       "plugins": "bundler git rails ruby yarn"
     },
     "ghcr.io/devcontainers/features/sshd:1": {
-      "version": "latest"
+      "version": "1.0.10"
     }
   },
   // Configure tool-specific properties.

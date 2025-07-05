@@ -9,18 +9,35 @@ I mostly copied what was done [here](https://github.com/microsoft/vscode-dev-con
 ## How?
 
 1. Copy the `.devcontainer` folder to your project
-2. Customize the files to your needs
-3. Open the project in Codespaces
+2. Copy `.env.example` to `.env` and customize environment variables
+3. Customize the files to your needs
+4. Open the project in Codespaces
 
 ## What's in the box?
 
 - Ruby 3.4.4
 - PostgreSQL 17 (exposed locally on port 5433)
-- Valkey 8
+- Valkey 8 (Redis-compatible, exposed locally on port 6379)
 - Node LTS
 - ZSH and Oh My Zsh
 - Mise version manager
 - Non root user
+
+## Security & Performance Features
+
+This configuration includes several security and performance improvements:
+
+### Security
+- **Environment-based credentials**: Database and Redis passwords use environment variables
+- **Valkey authentication**: Password protection enabled by default
+- **Pinned versions**: All Docker images and features use specific versions
+- **Non-root user**: Runs as `vscode` user for better security
+
+### Performance & Reliability
+- **Service dependencies**: App waits for database and Redis to be healthy before starting
+- **Health checks**: Robust health monitoring with proper startup periods
+- **Resource limits**: Memory limits prevent resource exhaustion (PostgreSQL: 512M, Valkey: 128M)
+- **Optimized volumes**: Named volumes with explicit drivers for better persistence
 
 ## Customizations
 
@@ -61,6 +78,75 @@ production:
 ```
 
 Notice the `host: postgres`? That's the name of the container in the `docker-compose.yml` file. If you change it to `db`, you must update the `database.yml` file too.
+
+## Environment Variables
+
+This devcontainer configuration supports customization through environment variables. Copy `.env.example` to `.env` and adjust the values as needed:
+
+### Database Configuration
+- `POSTGRES_USER`: PostgreSQL username (default: `postgres`)
+- `POSTGRES_DB`: PostgreSQL database name (default: `postgres`)
+- `POSTGRES_PASSWORD`: PostgreSQL password (default: `postgres`)
+
+### Valkey/Redis Configuration
+- `VALKEY_PASSWORD`: Valkey password (default: `devpassword`)
+- `VALKEY_PORT`: Host port for Valkey (default: `6379`)
+
+### Rails Configuration
+- `RAILS_ENV`: Rails environment (default: `development`)
+- `SECRET_KEY_BASE`: Rails secret key base
+- `RAILS_MASTER_KEY`: Rails master key for credentials
+
+## Service Connection Examples
+
+### Connecting to Valkey (Redis) from Rails
+
+Configure in `config/application.rb` or an initializer:
+```ruby
+# config/initializers/redis.rb
+Redis.current = Redis.new(
+  host: 'valkey',  # Service name from docker-compose.yml
+  port: 6379,
+  password: ENV['VALKEY_PASSWORD'] || 'devpassword'
+)
+```
+
+Using with Rails cache:
+```ruby
+# config/environments/development.rb
+config.cache_store = :redis_cache_store, {
+  url: "redis://:#{ENV['VALKEY_PASSWORD'] || 'devpassword'}@valkey:6379/0"
+}
+```
+
+Using with Sidekiq:
+```ruby
+# config/initializers/sidekiq.rb
+Sidekiq.configure_server do |config|
+  config.redis = {
+    url: "redis://:#{ENV['VALKEY_PASSWORD'] || 'devpassword'}@valkey:6379/0"
+  }
+end
+
+Sidekiq.configure_client do |config|
+  config.redis = {
+    url: "redis://:#{ENV['VALKEY_PASSWORD'] || 'devpassword'}@valkey:6379/0"
+  }
+end
+```
+
+### Connecting to PostgreSQL from Rails
+
+Your `database.yml` should use the service name and environment variables:
+```yaml
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: postgres
+  username: <%= ENV['POSTGRES_USER'] || 'postgres' %>
+  password: <%= ENV['POSTGRES_PASSWORD'] || 'postgres' %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+```
 
 ## How do I SSH into the Codespace instance?
 

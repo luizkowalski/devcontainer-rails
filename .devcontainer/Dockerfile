@@ -1,6 +1,7 @@
 FROM mcr.microsoft.com/devcontainers/base:ubuntu-24.04
 
-ENV RAILS_DEVELOPMENT_HOSTS=".githubpreview.dev,.app.github.dev"
+ARG RAILS_DEVELOPMENT_HOSTS=".githubpreview.dev,.app.github.dev"
+ENV RAILS_DEVELOPMENT_HOSTS=${RAILS_DEVELOPMENT_HOSTS}
 
 # Installs postgresql-client-17
 RUN apt-get install curl ca-certificates git -y --no-install-recommends \
