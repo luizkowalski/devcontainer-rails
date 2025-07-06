@@ -11,10 +11,14 @@ class ProxyController < ApplicationController
     end
 
     # 设置缓存头
-    expires_in 6.hours, public: true
+    # expires_in 6.hours, public: true
+    cache_key = "proxy_img:#{Digest::SHA256.hexdigest(url)}"
+    image_data = Rails.cache.fetch(cache_key, expires_in: 6.hours) do
+      URI.open(url).read
+    end
 
     # 转发图片数据
-    image_data = URI.open(url).read
+    # image_data = URI.open(url).read
     send_data image_data, type: "image/jpeg", disposition: "inline"
   rescue => e
     Rails.logger.error "❌ Proxy image error: #{e.message}"

@@ -4,7 +4,7 @@ namespace :instagram do
   task fetch: :environment do
     require Rails.root.join("app/services/instagram_fetcher")
 
-    tags = [ "cat", "dog", "coding" ]
+    tags = [ "queen" ]
 
     tags.each do |tag|
       posts = InstagramFetcher.fetch(tag)

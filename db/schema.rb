@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_05_123206) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_06_175512) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -25,6 +25,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_05_123206) do
     t.datetime "instagram_timestamp"
     t.datetime "posted_at"
     t.boolean "unread"
+    t.string "instagram_id"
+    t.index ["instagram_id"], name: "index_posts_on_instagram_id", unique: true
     t.index ["topic_id"], name: "index_posts_on_topic_id"
   end
 

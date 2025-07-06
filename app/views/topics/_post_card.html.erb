@@ -1,0 +1,23 @@
+<div class="post-card mb-4 shadow-sm" data-timestamp="<%= post.instagram_timestamp.to_i %>">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <%= image_tag proxy_image_url(url: post.image_url),
+          loading: "lazy",
+          class: "img-fluid rounded-start cursor-pointer",
+          style: "max-height: 300px; object-fit: cover;",
+          onclick: "showImageModal('#{j post.image_url}')" %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">用户<%= post.username %></h5>
+        <p class="card-text"><%= post.caption %></p>
+        <% if post.posted_at.present? %>
+          <p class="card-text">
+            <small class="text-muted"><%= post.posted_at.in_time_zone("Asia/Shanghai").strftime("%F %T") %></small>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

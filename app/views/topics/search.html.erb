@@ -1,71 +1,65 @@
 <!-- app/views/topics/search.html.erb -->
-<div class="container mt-3">
-  <h2 class="text-2xl font-bold mb-4">话题 <span class="text-primary">#<%= @query %></span> 的内容</h2>
-  <% @posts.each do |post| %>
-  <div class="card mb-3 shadow-sm">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <%= image_tag proxy_image_url(url: post.image_url), loading: "lazy", class: "img-fluid rounded shadow", onclick: "openModal(this.src)" %>
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title"><%= post.username %></h5>
-          <p class="card-text"><%= post.caption %></p>
-          <% if post.posted_at.present? %>
-            <p class="card-text"><small class="text-muted"><%= post.posted_at.in_time_zone("Asia/Shanghai").strftime("%F %T") %></small></p>
-          <% end %>
-        </div>
-      </div>
-    </div>
+<div class="relative">
+  <div id="new-posts-alert" class="fixed top-10 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-2 rounded shadow cursor-pointer z-50 hidden">
+    最近有 <span id="new-posts-count"></span> 条新帖子，点击查看
   </div>
-<% end %>
 
-</div>
+  <h1 class="text-3xl font-bold mb-6"> 话题 ##<%= @query %> 的内容 </h1>
 
-<div id="imageModal" onclick="closeModal()" style="
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(2px);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-">
-  <img id="modalImage" src="" style="
-    max-height: 90vh;
-    max-width: 90vw;
-    border-radius: 12px;
-    box-shadow: 0 0 10px #000;
-  ">
+  <div id="post-list" class="flex flex-col gap-4">
+    <% seen_ids = Set.new %>
+    <% @posts.each do |post| %>
+      <% next if seen_ids.include?(post.instagram_id) %>
+      <% seen_ids << post.instagram_id %>
+      <div class="post-card" data-timestamp="<%= post.instagram_timestamp.to_i %>">
+        <%= render partial: "topics/post_card", locals: { post: post } %>
+      </div>
+    <% end %>
+  </div>
 </div>
+<!-- ✅ 推荐方式：脚本放页面底部，确保 DOM 加载完毕 -->
 <script>
-  function openModal(src) {
-    const modal = document.getElementById("imageModal");
-    const img = document.getElementById("modalImage");
-    img.src = src;
-    modal.style.display = "flex";
-  }
+  document.addEventListener("DOMContentLoaded", function () {
+    const alertBox = document.getElementById('new-posts-alert');
+    const countSpan = document.getElementById('new-posts-count');
+    const postList = document.getElementById('post-list');
 
-  function closeModal() {
-    document.getElementById("imageModal").style.display = "none";
-  }
+    alertBox.style.display = 'none';
+
+    function getLatestTimestampFromDOM() {
+      const timestamps = [...document.querySelectorAll('.post-card')].map(el => parseInt(el.dataset.timestamp));
+      return Math.max(...timestamps, 0);
+    }
+
+    let latestTimestamp = getLatestTimestampFromDOM();
+
+    function fetchNewPosts() {
+      fetch(`/topics/fetch_new?q=<%= @query %>&since=${latestTimestamp}`)
+        .then(res => res.text())
+        .then(html => {
+          if (!html.trim()) return;
+
+          const wrapper = document.createElement('div');
+          wrapper.innerHTML = html;
+          const newCards = wrapper.querySelectorAll('.post-card');
+
+          if (newCards.length > 0) {
+            window.newPostsHTML = html;
+            countSpan.innerText = newCards.length;
+            alertBox.style.display = 'block';
+
+            const timestamps = [...newCards].map(el => parseInt(el.dataset.timestamp));
+            latestTimestamp = Math.max(...timestamps, latestTimestamp);
+          }
+        });
+    }
+
+    alertBox.onclick = () => {
+      postList.insertAdjacentHTML('afterbegin', window.newPostsHTML);
+      alertBox.style.display = 'none';
+    };
+
+    let timer = setInterval(fetchNewPosts, 60000);
+    window.onbeforeunload = () => clearInterval(timer);
+  });
 </script>
-
-
-<style>
-  body {
-    scroll-behavior: smooth;
-  }
-  #modalImg {
-    max-height: 80vh;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  }
-  .modal-backdrop.show {
-    opacity: 0.7;
-    backdrop-filter: blur(5px);
-  }
-</style>
