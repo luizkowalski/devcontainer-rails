@@ -1,0 +1,71 @@
+<!-- app/views/topics/search.html.erb -->
+<div class="container mt-3">
+  <h2 class="text-2xl font-bold mb-4">话题 <span class="text-primary">#<%= @query %></span> 的内容</h2>
+  <% @posts.each do |post| %>
+  <div class="card mb-3 shadow-sm">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <%= image_tag proxy_image_url(url: post.image_url), loading: "lazy", class: "img-fluid rounded shadow", onclick: "openModal(this.src)" %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= post.username %></h5>
+          <p class="card-text"><%= post.caption %></p>
+          <% if post.posted_at.present? %>
+            <p class="card-text"><small class="text-muted"><%= post.posted_at.in_time_zone("Asia/Shanghai").strftime("%F %T") %></small></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+</div>
+
+<div id="imageModal" onclick="closeModal()" style="
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(2px);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+">
+  <img id="modalImage" src="" style="
+    max-height: 90vh;
+    max-width: 90vw;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #000;
+  ">
+</div>
+<script>
+  function openModal(src) {
+    const modal = document.getElementById("imageModal");
+    const img = document.getElementById("modalImage");
+    img.src = src;
+    modal.style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+  }
+</script>
+
+
+<style>
+  body {
+    scroll-behavior: smooth;
+  }
+  #modalImg {
+    max-height: 80vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  }
+  .modal-backdrop.show {
+    opacity: 0.7;
+    backdrop-filter: blur(5px);
+  }
+</style>
