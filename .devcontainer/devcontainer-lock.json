@@ -1,9 +1,9 @@
 {
   "features": {
-    "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
-      "version": "0.0.4",
-      "resolved": "ghcr.io/devcontainers-extra/features/zsh-plugins@sha256:c8a1393b968f60d7ecf1199593fd9d88a0e0412229d21069700c4a3f52bd3722",
-      "integrity": "sha256:c8a1393b968f60d7ecf1199593fd9d88a0e0412229d21069700c4a3f52bd3722"
+    "ghcr.io/devcontainers-extra/features/zsh-plugins:0.0.5": {
+      "version": "0.0.5",
+      "resolved": "ghcr.io/devcontainers-extra/features/zsh-plugins@sha256:4dcc8e97307345cff26c2b4dfd840c2947b8b5bb20f492a68bdb9fbe9ccb67ba",
+      "integrity": "sha256:4dcc8e97307345cff26c2b4dfd840c2947b8b5bb20f492a68bdb9fbe9ccb67ba"
     },
     "ghcr.io/devcontainers/features/common-utils:2": {
       "version": "2.5.3",
