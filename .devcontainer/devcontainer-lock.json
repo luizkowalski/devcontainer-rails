@@ -25,7 +25,7 @@
       "resolved": "ghcr.io/rocker-org/devcontainer-features/apt-packages@sha256:87a4d7750a596a5db034ba8508782f31aebdc2ffe955c66aaecb33d9de2ecdae",
       "integrity": "sha256:87a4d7750a596a5db034ba8508782f31aebdc2ffe955c66aaecb33d9de2ecdae"
     },
-    "ghcr.io/roul/devcontainer-features/mise-node:1": {
+    "ghcr.io/roul/devcontainer-features/mise-node:1.0.3": {
       "version": "1.0.3",
       "resolved": "ghcr.io/roul/devcontainer-features/mise-node@sha256:60470630f6acd1f775118c9bfe92580b0f289d7b339716421010f825d1e3518b",
       "integrity": "sha256:60470630f6acd1f775118c9bfe92580b0f289d7b339716421010f825d1e3518b",
@@ -33,7 +33,7 @@
         "ghcr.io/roul/devcontainer-features/mise:latest"
       ]
     },
-    "ghcr.io/roul/devcontainer-features/mise-ruby:1": {
+    "ghcr.io/roul/devcontainer-features/mise-ruby:1.0.2": {
       "version": "1.0.2",
       "resolved": "ghcr.io/roul/devcontainer-features/mise-ruby@sha256:0bfa744260c880cf2905a30736b6870a6ea54bea300c372095f1d860ed83acf9",
       "integrity": "sha256:0bfa744260c880cf2905a30736b6870a6ea54bea300c372095f1d860ed83acf9",
@@ -41,7 +41,7 @@
         "ghcr.io/roul/devcontainer-features/mise:latest"
       ]
     },
-    "ghcr.io/roul/devcontainer-features/mise:1": {
+    "ghcr.io/roul/devcontainer-features/mise:1.0.6": {
       "version": "1.0.6",
       "resolved": "ghcr.io/roul/devcontainer-features/mise@sha256:bcbd34b34176b6255d5aa5b881f1addc99bb3eed6049c841cb201f63fca132e4",
       "integrity": "sha256:bcbd34b34176b6255d5aa5b881f1addc99bb3eed6049c841cb201f63fca132e4"
