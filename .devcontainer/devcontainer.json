@@ -4,8 +4,8 @@
   "service": "app", // This is the name of the service in the `docker-compose.yml` file
   "workspaceFolder": "/workspaces/app",
   "features": {
-    "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/devcontainers/features/common-utils:2": {
+    "ghcr.io/devcontainers/features/github-cli:1.0.14": {},
+    "ghcr.io/devcontainers/features/common-utils:2.5.4": {
       "username": "vscode",
       "userUid": 1001,
       "userGid": 1001,
@@ -14,7 +14,7 @@
       "configureZshAsDefaultShell": true,
       "upgradePackages": true
     },
-    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1.0.2": {
       "packages": "libpq-dev, libvips"
     },
     "ghcr.io/roul/devcontainer-features/mise:1.0.6": {},
@@ -26,7 +26,7 @@
       "username": "vscode",
       "plugins": "bundler git rails ruby yarn"
     },
-    "ghcr.io/devcontainers/features/sshd:1": {
+    "ghcr.io/devcontainers/features/sshd:1.0.10": {
       "version": "1.0.10"
     }
   },
