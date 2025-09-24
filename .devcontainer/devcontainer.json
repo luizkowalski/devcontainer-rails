@@ -4,7 +4,7 @@
   "service": "app", // This is the name of the service in the `docker-compose.yml` file
   "workspaceFolder": "/workspaces/app",
   "features": {
-    "ghcr.io/devcontainers/features/github-cli:1.0.14": {},
+    "ghcr.io/devcontainers/features/github-cli:1.0.15": {},
     "ghcr.io/devcontainers/features/common-utils:2.5.4": {
       "username": "vscode",
       "userUid": 1001,
@@ -19,16 +19,14 @@
     },
     "ghcr.io/roul/devcontainer-features/mise:1.0.6": {},
     "ghcr.io/roul/devcontainer-features/mise-ruby:1.0.2": {
-      "version": "3.4.5"
+      "version": "3.4.6"
     },
     "ghcr.io/roul/devcontainer-features/mise-node:1.0.3": {},
     "ghcr.io/devcontainers-extra/features/zsh-plugins:0.0.5": {
       "username": "vscode",
       "plugins": "bundler git rails ruby yarn"
     },
-    "ghcr.io/devcontainers/features/sshd:1.0.10": {
-      "version": "1.0.10"
-    }
+    "ghcr.io/devcontainers/features/sshd:1.1.0": {}
   },
   // Configure tool-specific properties.
   "customizations": {
