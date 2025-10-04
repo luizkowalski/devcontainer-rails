@@ -18,9 +18,6 @@
       "packages": "libpq-dev, libvips"
     },
     "ghcr.io/roul/devcontainer-features/mise:1.0.6": {},
-    "ghcr.io/roul/devcontainer-features/mise-ruby:1.0.2": {
-      "version": "3.4.6"
-    },
     "ghcr.io/roul/devcontainer-features/mise-node:1.0.3": {},
     "ghcr.io/devcontainers-extra/features/zsh-plugins:0.0.5": {
       "username": "vscode",
@@ -43,7 +40,7 @@
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // This can be used to network with other containers or the host.
   "forwardPorts": [
-    5433
+    5433, 3000
   ],
   "postStartCommand": "git config --global --add safe.directory /workspaces/app",
   // Use 'postCreateCommand' to run commands after the container is created.

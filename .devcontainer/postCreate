@@ -2,11 +2,11 @@
 
 echo "Current user: $(whoami)"
 
+echo "Trusting..."
+mise trust -y
+
 echo "Enable idiomatic version file..."
 mise settings add idiomatic_version_file_enable_tools ruby
-
-echo "Updating RubyGems..."
-gem update --system -N
 
 if [ -f "Gemfile" ]; then
   bundle install
@@ -24,7 +24,7 @@ echo "Copying database.yml..."
 cp --update=none config/database.yml.example config/database.yml
 
 if [ -f "bin/rails" ]; then
-  bin/rails db:prepare
+  bin/rails db:create db:prepare
 else
   echo "bin/rails not found, skipping database preparation."
 fi

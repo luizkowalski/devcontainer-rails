@@ -33,14 +33,6 @@
         "ghcr.io/roul/devcontainer-features/mise:latest"
       ]
     },
-    "ghcr.io/roul/devcontainer-features/mise-ruby:1.0.2": {
-      "version": "1.0.2",
-      "resolved": "ghcr.io/roul/devcontainer-features/mise-ruby@sha256:0bfa744260c880cf2905a30736b6870a6ea54bea300c372095f1d860ed83acf9",
-      "integrity": "sha256:0bfa744260c880cf2905a30736b6870a6ea54bea300c372095f1d860ed83acf9",
-      "dependsOn": [
-        "ghcr.io/roul/devcontainer-features/mise:latest"
-      ]
-    },
     "ghcr.io/roul/devcontainer-features/mise:1.0.6": {
       "version": "1.0.6",
       "resolved": "ghcr.io/roul/devcontainer-features/mise@sha256:bcbd34b34176b6255d5aa5b881f1addc99bb3eed6049c841cb201f63fca132e4",

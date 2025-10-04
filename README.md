@@ -15,8 +15,8 @@ I mostly copied what was done [here](https://github.com/microsoft/vscode-dev-con
 
 ## What's in the box?
 
-- Ruby 3.4.5
-- PostgreSQL 17 (exposed locally on port 5433)
+- Ruby 3.4.6
+- PostgreSQL 18 (exposed locally on port 5433)
 - Valkey 8 (Redis-compatible, exposed locally on port 6379)
 - Node LTS
 - ZSH and Oh My Zsh
@@ -59,7 +59,7 @@ You should, however, update your `database.yml` file if you use one. Here is wha
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: postgres # This is the name of the container in the docker-compose.yml file
+  host: postgres     # This is the name of the container in the docker-compose.yml file
   username: postgres # This is the default username for the postgres image
   password: postgres # This is the default password for the postgres image
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
