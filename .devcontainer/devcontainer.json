@@ -1,7 +1,7 @@
 {
   "name": "Devcontainer on Rails",
   "dockerComposeFile": "docker-compose.yml",
-  "service": "app", // This is the name of the service in the `docker-compose.yml` file
+  "service": "app",
   "workspaceFolder": "/workspaces/app",
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1.0.15": {},
@@ -40,7 +40,8 @@
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // This can be used to network with other containers or the host.
   "forwardPorts": [
-    5433, 3000
+    5433,
+    3000
   ],
   "postStartCommand": "git config --global --add safe.directory /workspaces/app",
   // Use 'postCreateCommand' to run commands after the container is created.

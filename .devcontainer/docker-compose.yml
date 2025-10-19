@@ -1,6 +1,6 @@
 services:
   app:
-    container_name: app # This is the name of the container when you run `docker ps`, not the name of the service in the `devcontainer.json` file
+    container_name: app
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
