@@ -164,7 +164,7 @@ or
 devcontainer exec --workspace-folder . zsh
 ```
 
-(or use DevContainer VSCode extension)
+(or use Devcontainer VSCode extension)
 
 ## Using devcontainer CLI
 
