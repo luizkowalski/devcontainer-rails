@@ -41,7 +41,7 @@ services:
 
   # Cache and Sidekiq
   valkey:
-    image: valkey/valkey:8.1-alpine
+    image: valkey/valkey:9-alpine
     restart: unless-stopped
     deploy:
       resources:
