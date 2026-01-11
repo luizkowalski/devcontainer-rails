@@ -4,6 +4,8 @@ services:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
+    ports:
+      - 3000:3000
     env_file:
       - devcontainer.env
     volumes:

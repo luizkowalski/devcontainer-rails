@@ -41,8 +41,7 @@
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // This can be used to network with other containers or the host.
   "forwardPorts": [
-    5433,
-    3000
+    5433
   ],
   "postStartCommand": "git config --global --add safe.directory /workspaces/app",
   // Use 'postCreateCommand' to run commands after the container is created.
