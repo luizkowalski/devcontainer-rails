@@ -14,6 +14,9 @@ else
   echo "No Gemfile found, skipping dependencies installation."
 fi
 
+echo "Installing Yarn dependencies..."
+npm install --global yarn
+
 if [ -f "package.json" ]; then
   yarn install
 else

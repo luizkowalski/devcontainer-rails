@@ -19,6 +19,7 @@
     },
     "ghcr.io/roul/devcontainer-features/mise:1.0.6": {},
     "ghcr.io/roul/devcontainer-features/mise-node:1.0.3": {},
+    "ghcr.io/roul/devcontainer-features/mise-bun:1": {},
     "ghcr.io/devcontainers-extra/features/zsh-plugins:0.0.5": {
       "username": "vscode",
       "plugins": "bundler git rails ruby yarn"

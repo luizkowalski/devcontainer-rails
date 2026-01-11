@@ -81,7 +81,7 @@ Notice the `host: postgres`? That's the name of the container in the `docker-com
 
 ## Environment Variables
 
-This devcontainer configuration supports customization through environment variables. Copy `.env.example` to `.env` and adjust the values as needed:
+This devcontainer configuration supports customization through environment variables. Update them in the `devcontainer.env` file.
 
 ### Database Configuration
 - `POSTGRES_USER`: PostgreSQL username (default: `postgres`)
