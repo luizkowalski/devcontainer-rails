@@ -4,8 +4,8 @@
   "service": "app",
   "workspaceFolder": "/workspaces/app",
   "features": {
-    "ghcr.io/devcontainers/features/github-cli:1.0.15": {},
-    "ghcr.io/devcontainers/features/common-utils:2.5.5": {
+    "ghcr.io/devcontainers/features/github-cli:1.1.0": {},
+    "ghcr.io/devcontainers/features/common-utils:2.5.6": {
       "username": "vscode",
       "userUid": 1001,
       "userGid": 1001,

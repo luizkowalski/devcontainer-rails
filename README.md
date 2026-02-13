@@ -15,7 +15,7 @@ I mostly copied what was done [here](https://github.com/microsoft/vscode-dev-con
 
 ## What's in the box?
 
-- Ruby 3.4.6
+- Ruby 4.0.1
 - PostgreSQL 18 (exposed locally on port 5433)
 - Valkey 8 (Redis-compatible, exposed locally on port 6379)
 - Node LTS
