@@ -1,0 +1,17 @@
+version: 2
+updates:
+  - package-ecosystem: "docker"
+    directory: "/.devcontainer"
+    schedule:
+      interval: "daily"
+      time: "18:00"
+      timezone: "Europe/Berlin"
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: "devcontainers"
+    directory: "/.devcontainer"
+    schedule:
+      interval: "daily"
+      time: "18:00"
+      timezone: "Europe/Berlin"
+    open-pull-requests-limit: 10
