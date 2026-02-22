@@ -9,7 +9,7 @@ updates:
     open-pull-requests-limit: 10
 
   - package-ecosystem: "devcontainers"
-    directory: "/.devcontainer"
+    directory: "/"
     schedule:
       interval: "daily"
       time: "18:00"
