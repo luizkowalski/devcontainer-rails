@@ -1,4 +1,4 @@
-FROM ruby:4.0.3-trixie
+FROM ruby:4.0.4-trixie
 
 ARG RAILS_DEVELOPMENT_HOSTS=".githubpreview.dev,.app.github.dev"
 ENV RAILS_DEVELOPMENT_HOSTS=${RAILS_DEVELOPMENT_HOSTS}
