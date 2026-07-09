@@ -15,7 +15,7 @@ else
 fi
 
 echo "Installing Yarn dependencies..."
-npm install --global yarn
+npm install --global yarn@1
 
 if [ -f "package.json" ]; then
   yarn install
