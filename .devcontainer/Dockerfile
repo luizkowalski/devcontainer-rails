@@ -16,8 +16,11 @@ RUN apt-get update \
 RUN gem update --system -N
 
 # Add user vscode to the group sudo
-RUN groupadd -g 1000 vscode && \
-  useradd -u 1000 -g 1000 -m -s /bin/bash vscode && \
+RUN groupadd -g 1001 vscode && \
+  useradd -u 1001 -g 1001 -m -s /bin/bash vscode && \
   echo "vscode ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/vscode
+
+# Give vscode ownership of the gem/bundle dir so it can install gems
+RUN mkdir -p "$GEM_HOME" && chown -R vscode:vscode "$GEM_HOME"
 
 USER vscode
