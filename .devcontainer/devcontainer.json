@@ -12,7 +12,8 @@
       "installZsh": true,
       "installOhMyZsh": true,
       "configureZshAsDefaultShell": true,
-      "upgradePackages": true
+      "upgradePackages": true,
+      "sudoers": true
     },
     "ghcr.io/rocker-org/devcontainer-features/apt-packages:1.0.2": {
       "packages": "libpq-dev, libvips"

@@ -161,7 +161,7 @@ docker exec -it --user vscode app /bin/zsh
 or
 
 ```bash
-devcontainer exec --workspace-folder . zsh
+npx @devcontainers/cli exec zsh
 ```
 
 (or use Devcontainer VSCode extension)
@@ -172,19 +172,19 @@ Install with `npm install -g @devcontainers/cli`
 
 ### Setting it up
 ```bash
-devcontainer up --workspace-folder .
+npx @devcontainers/cli up
 ```
 
 ### Checking for outdated dependencies
 
 ```bash
-devcontainer --workspace-folder . outdated
+npx @devcontainers/cli outdated
 ```
 
 ### Upgrading your dependencies
 
 ```bash
-devcontainer upgrade --workspace-folder .
+npx @devcontainers/cli upgrade
 ```
 
 ### Removing everything
