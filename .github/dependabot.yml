@@ -8,6 +8,14 @@ updates:
       timezone: "Europe/Berlin"
     open-pull-requests-limit: 10
 
+  - package-ecosystem: "docker-compose"
+    directory: "/.devcontainer"
+    schedule:
+      interval: "daily"
+      time: "18:00"
+      timezone: "Europe/Berlin"
+    open-pull-requests-limit: 10
+
   - package-ecosystem: "devcontainers"
     directory: "/"
     schedule:
