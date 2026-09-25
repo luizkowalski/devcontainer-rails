@@ -13,7 +13,8 @@
       "installOhMyZsh": true,
       "configureZshAsDefaultShell": true,
       "upgradePackages": true,
-      "sudoers": true
+      "sudoers": true,
+      "addGroups": "docker"
     },
     "ghcr.io/rocker-org/devcontainer-features/apt-packages:1.0.2": {
       "packages": "libpq-dev, libvips"
@@ -33,8 +34,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "Shopify.ruby-lsp",
-        "EditorConfig.EditorConfig"
+        "Shopify.ruby-lsp"
       ]
     },
     "settings": {
